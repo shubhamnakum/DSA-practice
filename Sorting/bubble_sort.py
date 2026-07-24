@@ -27,13 +27,11 @@ def bubble_sort(arr):
                 arr[j+1] = arr[j]
                 arr[j] = temp
                 is_swap = 1
-    if is_swap == 0:
-        return 
-    print("inside")
-    print(f"sorted array : {arr}")
+        if is_swap == 0:
+            break 
     return arr
 
-arr = [13,46,24,52,20,9]
+arr = [52,40,26,20,13,9]
 sorted_arr = bubble_sort(arr)
 print(f"sorted array : {sorted_arr}")
 
