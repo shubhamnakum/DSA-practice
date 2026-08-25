@@ -11,21 +11,27 @@ pascals_triangle = [
     [1, 5, 10, 10, 5, 1],
 ]
 
-we know that rth row will have r elements.
-so run a loop and genrate values using ans*(row-col)/col formula.
+run a nested loop and generate row using type 2 solution
 """
 
 # Implementation:
 
 
-
 def generateRow(row):
-    ans = 1
-    print(ans)
+    res = []
+    ans=1
+    res.append(ans)
     for i in range(1,row):
         ans = ans*(row-i)
         ans = ans//(i)
-        print(ans)
+        res.append(ans)
+    return res
+
+def generateTriangle(row):
+    ans = []
+    for i in range(1,row+1):
+        ans.append(generateRow(i))
+    print(ans)
     return None
 
 pascals_triangle = [
@@ -36,8 +42,8 @@ pascals_triangle = [
     [1, 4, 6, 4, 1],
     [1, 5, 10, 10, 5, 1],
 ]
-generateRow(6)
+generateTriangle(6)
 
 
-# T.C = o(n)
+# T.C = o(n*n) = o(n^2)
 # S.C = o(1)
